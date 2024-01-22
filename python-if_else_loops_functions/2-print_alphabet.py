@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-i = 97
-while i <= 122:
+i = ord("a")
+while i <= ord("z"):
     print(chr(i), end='')
     i = i + 1
