@@ -1,25 +1,16 @@
-# Python Hello World
+# Holberton Higher Level Programming
 
-This simple project illustrates the traditional "Hello, World!" program in Python.
-It's a great starting point for beginners who want to explore the Python language.
+This repository contains files related to various Python programming concepts, covering topics such as data structures, exceptions, loops, functions, modules, and more.
 
-## How to run the program
+## My Files:
 
-1. Make sure you have Python installed on your machine.
+- python-data_structures
+- python-exceptions
+- python-hello_world
+- python-if_else_loops_functions
+- python-import_modules
+- python-more_data_structures
 
-2. Clone this repository on your machine using the following command:
+## Author
 
-``bash
-git clone https://github.com/votre-utilisateur/python-hello_world.git
-
-## Project content
-
-1. **if_else_example.py** : Contains examples of `if-else` statements illustrating decision making in Python.
-
-2. **loops_example.py** : Demonstrates the use of `for` and `while` loops for iteration through elements.
-
-3. **functions_example.py** : Demonstrates how to define and call functions in Python.
-
-## Authors
-
-* [HASSANY MOHAMED Abdou Rodrigue](https://github.com/Rdrg974)
+This repository was created by Abdou Rodrigue HASSANY MOHAMED.
