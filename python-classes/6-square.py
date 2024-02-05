@@ -33,8 +33,6 @@ class Square:
         The position of the square's top-left corner.
     """
 
-    __size = None
-
     @property
     def size(self):
         """int: The size of the square's sides."""
@@ -49,8 +47,6 @@ class Square:
             raise ValueError("size must be >= 0")
         else:
             self.__size = value
-
-    __position = None
 
     @property
     def position(self):
