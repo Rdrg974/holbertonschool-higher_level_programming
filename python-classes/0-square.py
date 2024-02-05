@@ -1,5 +1,7 @@
 #!/usr/bin/python3
+"""An emppty class Square
+"""
 class Square:
-    """An empty class Square that defines a square
+    """That defines a square
     """
     pass
