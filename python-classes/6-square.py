@@ -6,7 +6,8 @@ Raises:
     ValueError: If the size provided is less than zero.
 
 Returns:
-    int: The area of the square.
+    int: The area of the square
+    tuple: The position of the square's top-left corner
 
 Attributes:
     size (int): The size of the square's sides.
@@ -44,8 +45,9 @@ class Square:
 
     @position.setter
     def position(self, value):
-        if not isinstance(value, tuple) or not all(v >= 0 for v in value) or \
-                len(value) != 2 or not all(isinstance(v, int) for v in value):
+        if not isinstance(value, tuple) or len(value) != 2 or \
+            not all(isinstance(v, int) for v in value) or \
+                not all(v >= 0 for v in value):
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = value
