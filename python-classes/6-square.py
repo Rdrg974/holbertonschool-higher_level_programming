@@ -1,26 +1,38 @@
 #!/usr/bin/python3
 """This module defines a class representing a square.
 
-Raises:
-    TypeError: If the size provided is not an integer.
-    ValueError: If the size provided is less than zero.
+Raises
+------
+TypeError
+    If the size provided is not an integer.
+ValueError
+    If the size provided is less than zero.
 
-Returns:
-    int: The area of the square
-    tuple: The position of the square's top-left corner
+Returns
+-------
+int
+    The area of the square.
+tuple
+    The position of the square's top-left corner.
 
-Attributes:
-    size (int): The size of the square's sides.
-    position (tuple of int): The position of the square's top-left corner
+Attributes
+----------
+size : int
+    The size of the square's sides.
+position : tuple of int
+    The position of the square's top-left corner.
 """
 
 
 class Square:
     """A class representing a square shape.
 
-    Attributes:
-        size (int): The size of the square's sides.
-        position (tuple of int): The position of the square's top-left corner.
+    Attributes
+    ----------
+    size : int
+        The size of the square's sides.
+    position : tuple of int
+        The position of the square's top-left corner.
     """
     __size = None
 
