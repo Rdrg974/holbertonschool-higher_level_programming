@@ -1,5 +1,4 @@
 # Python Directory - Classes and Objects
-========================================
 
 ## Table of contents
 * [Description of project](#description-of-project)
