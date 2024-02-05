@@ -34,7 +34,16 @@ class Square:
     """
     def __init__(self, __size=0, __position=(0, 0)):
         """Initialize the square."""
+        if not isinstance(__size, int):
+            raise TypeError("size must be an integer")
+        if __size < 0:
+            raise ValueError("size must be >= 0")
         self.__size = __size
+        if not isinstance(__position, tuple) or len(__position) != 2:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        elif all(type(i) is not int for i in __position) or \
+                all(v < 0 for v in __position):
+            raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = __position
 
     @property
