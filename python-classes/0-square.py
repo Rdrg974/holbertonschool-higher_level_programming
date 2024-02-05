@@ -3,5 +3,5 @@ class Square:
     """Write an empty class Square
     that defines a square
     """
-    def __int__():
+    def square():
         pass
