@@ -2,7 +2,7 @@ The 'example' module
 ====================
 
 Using 'Print_square'
--------------------
+--------------------
 
 >>> print_square = __import__('4-print_square').print_square
 
