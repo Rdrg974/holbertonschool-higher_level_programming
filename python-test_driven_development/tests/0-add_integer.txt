@@ -20,5 +20,7 @@ Using 'add'
 9
 >>> add_integer(6.5, 2)
 8
->>> add_integer(50, 10)
-60
+>>> add_integer("5", 10)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 3, in add_integer
