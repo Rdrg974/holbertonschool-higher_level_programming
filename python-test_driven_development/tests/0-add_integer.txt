@@ -18,7 +18,11 @@ Using 'add'
 9
 >>> add_integer(7.5, 2.5)
 9
->>> add_integer(6.5, 2)
-8
->>> add_integer(5, 10)
-15
+>>> add_integer("5", 10)
+Traceback (most recent call last):
+  ...
+TypeError: a must be an integer
+>>> add_integer(5, "10")
+Traceback (most recent call last):
+  ...
+TypeError: b must be an integer
