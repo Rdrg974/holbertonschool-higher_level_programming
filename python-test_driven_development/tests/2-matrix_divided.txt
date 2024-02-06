@@ -9,6 +9,7 @@ Using 'Div'
 >>> matrix1 = [[1, 2, 3], [4, 5, 6]]
 >>> matrix2 = [[1, 2, "e"], [4, 5, 6]]
 >>> matrix3 = [[1, 2], [3, 4, 5]]
+>>> matrix4 = [[10, 8], 5]
 >>> empty_list = []
 >>> empty_lists = [[], [], []]
 
@@ -19,6 +20,9 @@ Using 'Div'
 Traceback (most recent call last):
     ...
 ZeroDivisionError: division by zero
+
+>>> matrix_divided(matrix1, 4.5)
+[[0.22, 0.44, 0.67], [0.89, 1.11, 1.33]]
 
 >>> matrix_divided(matrix2, 1)
 Traceback (most recent call last):
@@ -37,12 +41,20 @@ TypeError: div must be a number
 
 >>> matrix_divided(None, 3)
 Traceback (most recent call last):
+    ...
 TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 >>> matrix_divided(empty_list, 2)
 Traceback (most recent call last):
+    ...
 TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 >>> matrix_divided(empty_lists, 3)
 Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix_divided(matrix4, 2)
+Traceback (most recent call last):
+    ...
 TypeError: matrix must be a matrix (list of lists) of integers/floats
