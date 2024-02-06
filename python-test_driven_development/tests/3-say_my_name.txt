@@ -9,9 +9,6 @@ Using 'Say_my_name'
 >>> say_my_name("John", "Smith")
 My name is John Smith
 
->>> say_my_name("Walter", "White")
-My name is Walter White
-
 >>> say_my_name("Bob")
 My name is Bob 
 
@@ -19,3 +16,8 @@ My name is Bob
 Traceback (most recent call last):
     ...
 TypeError: first_name must be a string
+
+>>> say_my_name("White", 12)
+Traceback (most recent call last):
+...
+TypeError: last_name must be a string
