@@ -12,7 +12,7 @@ My name is John Smith
 >>> say_my_name("Bob")
 My name is Bob 
 
->>> say_my_name(12, "Blue")
+>>> say_my_name(None, "Blue")
 Traceback (most recent call last):
     ...
 TypeError: first_name must be a string
