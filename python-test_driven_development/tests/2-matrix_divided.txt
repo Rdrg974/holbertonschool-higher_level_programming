@@ -33,6 +33,7 @@ error input
 >>> matrix5 = [[10, 8], 5]
 >>> matrix6 = [[1, 2, "e"], [4, 5, 6]]
 >>> matrix7 = [[1, 2, 3, 4], [5, 6, 7, 8, 9, 10], [11, 12, 13]]
+>>> matrix8 = [1, 2, 3]
 >>> empty_list = []
 >>> empty_lists = [[], [], []]
 
@@ -60,6 +61,11 @@ TypeError: matrix must be a matrix (list of lists) of integers/floats
 Traceback (most recent call last):
     ...
 TypeError: Each row of the matrix must have the same size
+
+>>> matrix_divided(matrix8, 3)
+Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 >>> matrix_divided(empty_list, 2)
 Traceback (most recent call last):
