@@ -21,6 +21,12 @@ Traceback (most recent call last):
 TypeError: text must be a string
 
 >>> text_indentation(""" Holberton.""")
-Traceback (most recent call last):
-    ...
-IndexError: string index out of range
+Holberton.
+<BLANKLINE>
+
+>>> text_indentation("")
+
+
+>>> text_indentation("?")
+?
+<BLANKLINE>
