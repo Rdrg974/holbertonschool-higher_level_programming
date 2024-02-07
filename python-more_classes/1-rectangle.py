@@ -8,7 +8,7 @@ class Rectangle:
         """This method constructs the object."""
         self.width = width
         self.height = height
-        
+
     @property
     def width(self):
         """This property returns the width of the rectangle."""
