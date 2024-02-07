@@ -26,7 +26,6 @@ Using 'Print_square'
 
 >>> print_square(0)
 
-
 >>> print_square(-1)
 Traceback (most recent call last):
     ...
@@ -40,4 +39,9 @@ TypeError: size must be an integer
 >>> print_square(1.403)
 Traceback (most recent call last):
     ...
+TypeError: size must be an integer
+
+>>> print_square(None)
+Traceback (most recent call last):
+	...
 TypeError: size must be an integer
