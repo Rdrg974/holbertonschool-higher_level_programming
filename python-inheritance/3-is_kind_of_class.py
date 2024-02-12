@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Check f it's exactly the same"""
+"""Check if it's exactly the same"""
 
 
 def is_kind_of_class(obj, a_class):
