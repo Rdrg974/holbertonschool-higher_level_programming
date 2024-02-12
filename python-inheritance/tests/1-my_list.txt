@@ -58,4 +58,4 @@ True
 >>> my_list.print_sorted([1, 2, 3])
 Traceback (most recent call last):
     ...
-TypeError: print_sorted() takes 1 positional argument but 2 were given
+TypeError: MyList.print_sorted() takes 1 positional argument but 2 were given
