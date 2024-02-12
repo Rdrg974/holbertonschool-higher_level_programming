@@ -18,3 +18,13 @@ Using 'Sort'
 >>> my_list = MyList()
 >>> my_list.print_sorted()
 []
+
+>>> my_list = MyList(1)
+Traceback (most recent call last):
+    ...
+TypeError: MyList.__init__() takes 1 positional argument but 2 were given
+
+>>< my_list = MyList(None)
+Traceback (most recent call last):
+    ...
+TypeError: MyList.__init__() takes 1 positional argument but 2 were given
