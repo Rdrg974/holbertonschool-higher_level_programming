@@ -37,3 +37,8 @@ TypeError: '<' not supported between instances of 'str' and 'int'
 Traceback (most recent call last):
     ...
 TypeError: list expected at most 1 argument, got 2
+
+>>> list_no_exist.print_sorted()
+Traceback (most recent call last):
+    ...
+NameError: name 'list_no_exist' is not defined
