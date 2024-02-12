@@ -18,3 +18,8 @@ Using 'Sort'
 >>> my_list = MyList()
 >>> my_list.print_sorted()
 []
+
+>>> my_list = MyList(["World", "Hello"])
+>>> my_list.print_sorted()
+Traceback (most recent call last):
+TypeError: unorderable types: str() < int()
