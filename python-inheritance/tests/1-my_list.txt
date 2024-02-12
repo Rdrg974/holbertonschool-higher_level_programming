@@ -33,8 +33,7 @@ TypeError: 'NoneType' object is not iterable
 Traceback (most recent call last):
 TypeError: '<' not supported between instances of 'str' and 'int'
 
->>> my_list = MyList([1, 4, 3, 2])
->>> my_list.print_sorted(1)
+>>> my_list = MyList([1, 4], [3, 2])
 Traceback (most recent call last):
     ...
-TypeError: MyList.print_sorted() takes 1 positional argument but 2 were given
+TypeError: list expected at most 1 argument, got 2
