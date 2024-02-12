@@ -19,7 +19,7 @@ Using 'Sort'
 >>> my_list.print_sorted()
 []
 
->>> my_list = MyList(["World", "Hello"])
->>> my_list.print_sorted()
+>>> my_list = MyList(1)
 Traceback (most recent call last):
-TypeError: unorderable types: str() < int()
+    ...
+TypeError: MyList.__init__() takes 1 positional argument but 2 were given
