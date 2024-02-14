@@ -8,7 +8,7 @@ def pascal_triangle(n):
     """
     if n > 0:
         l_pascal = [[1]]
-        for i in range(n -1):
+        for i in range(n - 1):
             my_list = [1]
             if i > 0:
                 n = len(l_pascal)
