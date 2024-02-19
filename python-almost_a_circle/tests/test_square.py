@@ -126,16 +126,24 @@ class TestSquare(unittest.TestCase):
         with open("Square.json", "r") as f:
             self.assertEqual(f.read(), "[]")
         
-        Base._Base__nb_objects = 0
-        Square.save_to_file([])
-        
-        with open("Square.json", "r") as f:
-            self.assertEqual(f.read(), "[]")
-        
         Square.save_to_file([Square(1)])
         
         with open("Square.json", "r") as f:
             self.assertEqual(f.read(), '[{"id": 1, "x": 0, "size": 1, "y": 0}]')
+    
+    def test_save_to_file2(self):
+        """Test save_to_file([]) in Square."""
+        filename = "Square.json"
+
+        Square.save_to_file([])
+        self.assertTrue(os.path.exists(filename))
+        
+        with open(filename, "r") as f:
+            file_content = f.read()
+
+        self.assertEqual(file_content, "[]")
+        
+        os.remove(filename)
 
     def test_load_from_file(self):
         """Test load_from_file method where file does not exist."""

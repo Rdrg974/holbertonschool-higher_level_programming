@@ -148,7 +148,6 @@ class TestRectangle(unittest.TestCase):
 
         self.assertEqual(dict_1, expected_output)
 
-    Base._Base__nb_objects = 0
     def test_update_1(self):
         """Test update() in Rectangle"""
         Base._Base__nb_objects = 0
@@ -252,13 +251,17 @@ class TestRectangle(unittest.TestCase):
     
     def test_save_to_file2(self):
         """Test save_to_file([]) in Rectangle"""
+        filename = "Rectangle.json"
+
         Rectangle.save_to_file([])
+        self.assertTrue(os.path.exists(filename))
         
-        with open("Rectangle.json", "r") as f:
-            list_output = json.load(f)
+        with open(filename, "r") as f:
+            file_content = f.read()
+
+        self.assertEqual(file_content, "[]")
         
-        expected_output = []
-        self.assertEqual(list_output, expected_output)
+        os.remove(filename)
     
     def test_save_to_file_3(self):
         """Test save_to_file() in Rectangle"""
