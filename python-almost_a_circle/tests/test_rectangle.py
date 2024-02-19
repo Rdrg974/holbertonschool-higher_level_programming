@@ -82,9 +82,17 @@ class TestRectangle(unittest.TestCase):
 
     def test__str__(self):
         """Test __str__"""
-        r1 = Rectangle(1, 2, 3, 4)
+        r1 = Rectangle(4, 6, 2, 1, 12)
+        expected_output = '[Rectangle] (12) 2/1 - 4/6\n'
+    
+        original_stdout = sys.stdout
+        sys.stdout = StringIO()
+    
+        print(r1)
+        print_output = sys.stdout.getvalue()
 
-        self.assertTrue(hasattr(r1, '__str__'))
+        sys.stdout = original_stdout
+        self.assertEqual(print_output, expected_output)
 
     def test_display_without_x_y(self):
         """Test display() whihout x and y"""
