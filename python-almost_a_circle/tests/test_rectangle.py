@@ -234,6 +234,41 @@ class TestRectangle(unittest.TestCase):
 
         sys.stdout = original_stdout
         self.assertEqual(update_output, expected_output)
+    
+    def test_save_to_file(self):
+        """Test save_to_file() in Rectangle"""
+        Rectangle.save_to_file([])
+        
+        with open("Rectangle.json", "r") as f:
+            list_output = json.load(f)
+
+        expected_output = []
+        self.assertEqual(list_output, expected_output)
+    
+    def test_save_to_file_2(self):
+        """Test save_to_file() in Rectangle"""
+        Rectangle.save_to_file([Rectangle(1, 2)])
+        
+        with open("Rectangle.json", "r") as f:
+            list_output = json.load(f)
+        
+        expected_output = [{'id': 1, 'width': 1, 'height': 2, 'x': 0, 'y': 0}]
+        self.assertEqual(list_output, expected_output)
+
+    def test_load_from_file(self):
+        """Test load_from_file() in Rectangle doesn't exist"""
+        list_output = Rectangle.load_from_file()
+
+        expected_output = []
+        self.assertEqual(list_output, expected_output)
+        
+    def test_load_from_file_2(self):
+        """Test load_from_file() in Rectangle when exist"""
+        Rectangle.save_to_file([Rectangle(1, 2)])
+        list_output = Rectangle.load_from_file()
+
+        expected_output = [Rectangle(1, 2)]
+        self.assertEqual(list_output, expected_output)
 
 if __name__ == "__main__":
     unittest.main()
