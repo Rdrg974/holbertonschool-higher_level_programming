@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """A class Base."""
+import turtle
 import json
 import os
 
@@ -62,3 +63,37 @@ class Base:
             json_str = f.read()
             list_dict = cls.from_json_string(json_str)
             return [cls.create(**d) for d in list_dict]
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """Draw rectangles and squares."""
+        turtle.title("Draw")
+        turtle.bgcolor("black")
+        t = turtle.Turtle()
+        t.color("yellow", "red")
+        t.shape("turtle")
+        t.speed(1)
+        for r in list_rectangles:
+            t.penup()
+            t.goto(r.x, r.y)
+            t.pendown()
+            t.forward(r.width)
+            t.left(90)
+            t.forward(r.height)
+            t.left(90)
+            t.forward(r.width)
+            t.left(90)
+            t.forward(r.height)
+            t.left(90)
+        for s in list_squares:
+            t.penup()
+            t.goto(s.x, s.y)
+            t.pendown()
+            t.forward(s.size)
+            t.left(90)
+            t.forward(s.size)
+            t.left(90)
+            t.forward(s.size)
+            t.left(90)
+            t.forward(s.size)
+            t.left(90)
