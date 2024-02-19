@@ -126,6 +126,7 @@ class TestSquare(unittest.TestCase):
         with open("Square.json", "r") as f:
             self.assertEqual(f.read(), "[]")
         
+        Base._Base__nb_objects = 0
         Square.save_to_file([])
         
         with open("Square.json", "r") as f:

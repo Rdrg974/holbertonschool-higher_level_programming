@@ -251,13 +251,12 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(list_output, expected_output)
     
     def test_save_to_file2(self):
-        """Test save_to_file() in Rectangle"""
-        Base._Base__nb_objects = 0
+        """Test save_to_file([]) in Rectangle"""
         Rectangle.save_to_file([])
         
         with open("Rectangle.json", "r") as f:
             list_output = json.load(f)
-
+        
         expected_output = []
         self.assertEqual(list_output, expected_output)
     
