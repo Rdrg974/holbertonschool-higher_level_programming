@@ -94,4 +94,5 @@ class Rectangle(Base):
         return self.__height * self.__width
 
     def display(self):
+        """That prints in stdout the Rectangle instance with the character #"""
         print("\n".join(["#" * self.__width for _ in range(self.__height)]))
