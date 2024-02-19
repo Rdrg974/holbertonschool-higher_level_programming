@@ -235,5 +235,12 @@ class TestRectangle(unittest.TestCase):
         sys.stdout = original_stdout
         self.assertEqual(update_output, expected_output)
 
+    def text_create_1(self):
+        """Test create Rectangle with a dict : **{ 'id': 89 }"""
+        r1 = Rectangle(10, 10, 10, 10)
+        r2 = Rectangle.create(**{ 'id': 89 })
+
+        self.assertEqual(r1.id, r2.id)
+
 if __name__ == "__main__":
     unittest.main()
