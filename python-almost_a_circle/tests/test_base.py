@@ -3,6 +3,7 @@
 import unittest
 import json
 import sys
+import os
 
 from io import StringIO
 from models.base import Base
@@ -112,6 +113,30 @@ class TestBase(unittest.TestCase):
         self.assertEqual(r1.height, 2)
         self.assertEqual(r1.x, 3)
         self.assertEqual(r1.y, 4)
+    
+    def test_create_6(self):
+        """Test create with a dict : **{ 'id': 89, 'size': 1 }"""
+        s1 = Square.create(**{ 'id': 89, 'size': 1 })
+
+        self.assertEqual(s1.id, 89)
+        self.assertEqual(s1.size, 1)
+    
+    def test_create_7(self):
+        """Test create with a dict : **{ 'id': 89, 'size': 1, 'x': 2 }"""
+        s1 = Square.create(**{ 'id': 89, 'size': 1, 'x': 2 })
+
+        self.assertEqual(s1.id, 89)
+        self.assertEqual(s1.size, 1)
+        self.assertEqual(s1.x, 2)
+        
+    def test_create_8(self):
+        """Test create with a dict : **{ 'id': 89, 'size': 1, 'x': 2, 'y': 3 }"""
+        s1 = Square.create(**{ 'id': 89, 'size': 1, 'x': 2, 'y': 3 })
+
+        self.assertEqual(s1.id, 89)
+        self.assertEqual(s1.size, 1)
+        self.assertEqual(s1.x, 2)
+        self.assertEqual(s1.y, 3)
 
 if __name__ == "__main__":
     unittest.main()
