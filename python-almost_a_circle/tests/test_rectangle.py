@@ -2,6 +2,9 @@
 '''Module for Rectangle unit tests.'''
 import unittest
 import json
+import sys
+
+from io import StringIO
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
@@ -69,6 +72,106 @@ class TestRectangle(unittest.TestCase):
 
         with self.assertRaises(ValueError):
             r14 = Rectangle(1, 2, 3, -4)
+
+    def test_area(self):
+        """Test the area of rectangle"""
+        r1 = Rectangle(1, 2, 3, 4)
+        size_area = r1.area()
+
+        self.assertEqual(size_area, 2)
+
+    def test__str__(self):
+        """Test __str__"""
+        r1 = Rectangle(1, 2, 3, 4)
+
+        self.assertTrue(hasattr(r1, '__str__'))
+
+    def test_display_without_x_y(self):
+        """Test display() whihout x and y"""
+        r1 = Rectangle(1, 2)
+        expected_output = "#\n#\n"
+
+        original_stdout = sys.stdout
+        sys.stdout = StringIO()
+
+        r1.display()
+        displayed_output = sys.stdout.getvalue()
+
+        sys.stdout = original_stdout
+        self.assertEqual(displayed_output, expected_output)
+
+    def test_display_without_y(self):
+        """Test display() whitout y"""
+        r1 = Rectangle(1, 2, 1)
+        expected_output = " #\n #\n"
+
+        original_stdout = sys.stdout
+        sys.stdout = StringIO()
+
+        r1.display()
+        displayed_output = sys.stdout.getvalue()
+
+        sys.stdout = original_stdout
+        self.assertEqual(displayed_output, expected_output)
+
+    def test_display(self):
+        """Test display() whitout y"""
+        r1 = Rectangle(1, 2, 1, 1)
+        expected_output = "\n #\n #\n"
+
+        original_stdout = sys.stdout
+        sys.stdout = StringIO()
+
+        r1.display()
+        displayed_output = sys.stdout.getvalue()
+
+        sys.stdout = original_stdout
+        self.assertEqual(displayed_output, expected_output)
+
+    def test_to_dictionary(self):
+        """Test the distionary"""
+        r1 = Rectangle(1, 2, 1, 1, 4)
+        expected_output = {'id': 4, 'width': 1, 'height': 2, 'x': 1, 'y': 1}
+
+        dict_1 = Rectangle.to_dictionary(r1)
+
+        self.assertEqual(dict_1, expected_output)
+
+    def test_update_1(self):
+        """Test update() in Rectangle"""
+        r1 = Rectangle(1, 2, 1, 1, 4)
+
+        self.assertEqual(r1.update(), None)
+
+    def test_update_2(self):
+        """Test update(89) in Rectangle"""
+        r1 = Rectangle(1, 2, 1, 1, 4)
+
+        self.assertEqual(r1.update(89), None)
+
+    def test_update_3(self):
+        """Test update(89, 1) in Rectangle"""
+        r1 = Rectangle(1, 2, 1, 1, 4)
+
+        self.assertEqual(r1.update(89, 1), None)
+
+    def test_update_4(self):
+        """Test update(89, 1, 2) in Rectangle"""
+        r1 = Rectangle(1, 2, 1, 1, 4)
+
+        self.assertEqual(r1.update(89, 1, 2), None)
+
+    def test_update_5(self):
+        """Test update(89, 1, 2, 3) in Rectangle"""
+        r1 = Rectangle(1, 2, 1, 1, 4)
+
+        self.assertEqual(r1.update(89, 1, 2, 3), None)
+
+    def test_update_6(self):
+        """Test update(89, 1, 2, 3, 4) in Rectangle"""
+        r1 = Rectangle(1, 2, 1, 1, 4)
+
+        self.assertEqual(r1.update(89, 1, 2, 3, 4), None)
 
 if __name__ == "__main__":
     unittest.main()
