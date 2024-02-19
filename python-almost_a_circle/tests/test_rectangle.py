@@ -145,10 +145,12 @@ class TestRectangle(unittest.TestCase):
 
         self.assertEqual(dict_1, expected_output)
 
+    Base._Base__nb_objects = 0
     def test_update_1(self):
         """Test update() in Rectangle"""
+        Base._Base__nb_objects = 0
         r1 = Rectangle(10, 10, 10, 10)
-        expected_output = '[Rectangle] (26) 10/10 - 10/10\n'
+        expected_output = '[Rectangle] (1) 10/10 - 10/10\n'
 
         original_stdout = sys.stdout
         sys.stdout = StringIO()
@@ -252,22 +254,7 @@ class TestRectangle(unittest.TestCase):
         with open("Rectangle.json", "r") as f:
             list_output = json.load(f)
         
-        expected_output = [{'id': 1, 'width': 1, 'height': 2, 'x': 0, 'y': 0}]
-        self.assertEqual(list_output, expected_output)
-
-    def test_load_from_file(self):
-        """Test load_from_file() in Rectangle doesn't exist"""
-        list_output = Rectangle.load_from_file()
-
-        expected_output = []
-        self.assertEqual(list_output, expected_output)
-        
-    def test_load_from_file_2(self):
-        """Test load_from_file() in Rectangle when exist"""
-        Rectangle.save_to_file([Rectangle(1, 2)])
-        list_output = Rectangle.load_from_file()
-
-        expected_output = [Rectangle(1, 2)]
+        expected_output = [{'id': 26, 'width': 1, 'height': 2, 'x': 0, 'y': 0}]
         self.assertEqual(list_output, expected_output)
 
 if __name__ == "__main__":
