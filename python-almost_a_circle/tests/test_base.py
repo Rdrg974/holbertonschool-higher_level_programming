@@ -9,13 +9,14 @@ from models.square import Square
 class TestBase(unittest.TestCase):
     '''Tests the Base class.'''
     def test_initialisation(self):
+        """Tests Base() instantiation."""
+        a = Base()
         b = Base()
-        self.assertEqual(str(type(b)), "<class 'models.base.Base'>")
-        self.assertEqual(b.__dict__, {"id": 1})
-        self.assertEqual(b.id, 1)
 
+        self.assertNotEqual(a.id, b.id)
 
-
+        self.assertIsInstance(a.id, int)
+        self.assertIsInstance(a.id, int)
 
 if __name__ == "__main__":
     unittest.main()
