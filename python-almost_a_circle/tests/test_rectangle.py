@@ -237,7 +237,17 @@ class TestRectangle(unittest.TestCase):
         sys.stdout = original_stdout
         self.assertEqual(update_output, expected_output)
     
-    def test_save_to_file(self):
+    def test_save_to_file1(self):
+        """Test save_to_file() in Rectangle"""
+        Rectangle.save_to_file(None)
+        
+        with open("Rectangle.json", "r") as f:
+            list_output = json.load(f)
+        
+        expected_output = []
+        self.assertEqual(list_output, expected_output)
+    
+    def test_save_to_file2(self):
         """Test save_to_file() in Rectangle"""
         Rectangle.save_to_file([])
         
@@ -247,15 +257,32 @@ class TestRectangle(unittest.TestCase):
         expected_output = []
         self.assertEqual(list_output, expected_output)
     
-    def test_save_to_file_2(self):
+    def test_save_to_file_3(self):
         """Test save_to_file() in Rectangle"""
+        Base._Base__nb_objects = 0
         Rectangle.save_to_file([Rectangle(1, 2)])
         
         with open("Rectangle.json", "r") as f:
             list_output = json.load(f)
         
-        expected_output = [{'id': 26, 'width': 1, 'height': 2, 'x': 0, 'y': 0}]
+        expected_output = [{'id': 1, 'width': 1, 'height': 2, 'x': 0, 'y': 0}]
         self.assertEqual(list_output, expected_output)
+    
+    def test_load_from_file_1(self):
+        """Test load_from_file() in Rectangle doesn't exist"""
+        filename = "nonexistent_file.txt"
+
+        with self.assertRaises(TypeError):
+            Rectangle.load_from_file(filename)
+    
+    def test_load_from_file_2(self):
+        """Test load_from_file() in Rectangle exist"""
+        Base._Base__nb_objects = 0
+        Rectangle.save_to_file([Rectangle(1, 2)])
+        list_output = Rectangle.load_from_file()
+        
+        expected_output = [Rectangle(1, 2)]
+        self.assertNotEqual(str(list_output), str(expected_output))
 
 if __name__ == "__main__":
     unittest.main()
