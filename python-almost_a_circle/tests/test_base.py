@@ -10,13 +10,16 @@ class TestBase(unittest.TestCase):
     '''Tests the Base class.'''
     def test_initialisation(self):
         """Tests Base() instantiation."""
+        b = Base()
+
+        self.assertGreater(b.id, 0)
+
+    def test_incrementation(self):
+        """Test Base() incrementation"""
         a = Base()
         b = Base()
 
-        self.assertNotEqual(a.id, b.id)
-
-        self.assertIsInstance(a.id, int)
-        self.assertIsInstance(a.id, int)
+        self.assertEqual(b.id, a.id + 1)
 
 if __name__ == "__main__":
     unittest.main()
