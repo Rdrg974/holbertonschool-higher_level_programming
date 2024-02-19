@@ -11,6 +11,7 @@ class TestBase(unittest.TestCase):
     def test_initialisation(self):
         b = Base()
         self.assertEqual(str(type(b)), "<class 'models.base.Base'>")
+        self.assertEqual(b.__dict__, {"id": 1})
         self.assertEqual(b.id, 1)
 
 
