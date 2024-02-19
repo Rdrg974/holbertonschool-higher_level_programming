@@ -147,39 +147,93 @@ class TestRectangle(unittest.TestCase):
 
     def test_update_1(self):
         """Test update() in Rectangle"""
-        r1 = Rectangle(1, 2, 1, 1, 4)
+        r1 = Rectangle(10, 10, 10, 10)
+        expected_output = '[Rectangle] (21) 10/10 - 10/10\n'
 
-        self.assertEqual(r1.update(), None)
+        original_stdout = sys.stdout
+        sys.stdout = StringIO()
+
+        r1.update()
+        print(r1)
+        update_output = sys.stdout.getvalue()
+
+        sys.stdout = original_stdout
+        self.assertEqual(update_output, expected_output)
 
     def test_update_2(self):
         """Test update(89) in Rectangle"""
-        r1 = Rectangle(1, 2, 1, 1, 4)
+        r1 = Rectangle(10, 10, 10, 10)
+        expected_output = '[Rectangle] (89) 10/10 - 10/10\n'
 
-        self.assertEqual(r1.update(89), None)
+        original_stdout = sys.stdout
+        sys.stdout = StringIO()
+
+        r1.update(89)
+        print(r1)
+        update_output = sys.stdout.getvalue()
+
+        sys.stdout = original_stdout
+        self.assertEqual(update_output, expected_output)
 
     def test_update_3(self):
         """Test update(89, 1) in Rectangle"""
-        r1 = Rectangle(1, 2, 1, 1, 4)
+        r1 = Rectangle(10, 10, 10, 10)
+        expected_output = '[Rectangle] (89) 10/10 - 1/10\n'
 
-        self.assertEqual(r1.update(89, 1), None)
+        original_stdout = sys.stdout
+        sys.stdout = StringIO()
+
+        r1.update(89, 1)
+        print(r1)
+        update_output = sys.stdout.getvalue()
+
+        sys.stdout = original_stdout
+        self.assertEqual(update_output, expected_output)
 
     def test_update_4(self):
         """Test update(89, 1, 2) in Rectangle"""
-        r1 = Rectangle(1, 2, 1, 1, 4)
+        r1 = Rectangle(10, 10, 10, 10)
+        expected_output = '[Rectangle] (89) 10/10 - 1/2\n'
 
-        self.assertEqual(r1.update(89, 1, 2), None)
+        original_stdout = sys.stdout
+        sys.stdout = StringIO()
+
+        r1.update(89, 1, 2)
+        print(r1)
+        update_output = sys.stdout.getvalue()
+
+        sys.stdout = original_stdout
+        self.assertEqual(update_output, expected_output)
 
     def test_update_5(self):
         """Test update(89, 1, 2, 3) in Rectangle"""
-        r1 = Rectangle(1, 2, 1, 1, 4)
+        r1 = Rectangle(10, 10, 10, 10)
+        expected_output = '[Rectangle] (89) 3/10 - 1/2\n'
 
-        self.assertEqual(r1.update(89, 1, 2, 3), None)
+        original_stdout = sys.stdout
+        sys.stdout = StringIO()
+
+        r1.update(89, 1, 2, 3)
+        print(r1)
+        update_output = sys.stdout.getvalue()
+
+        sys.stdout = original_stdout
+        self.assertEqual(update_output, expected_output)
 
     def test_update_6(self):
         """Test update(89, 1, 2, 3, 4) in Rectangle"""
-        r1 = Rectangle(1, 2, 1, 1, 4)
+        r1 = Rectangle(10, 10, 10, 10)
+        expected_output = '[Rectangle] (89) 3/4 - 1/2\n'
 
-        self.assertEqual(r1.update(89, 1, 2, 3, 4), None)
+        original_stdout = sys.stdout
+        sys.stdout = StringIO()
+
+        r1.update(89, 1, 2, 3, 4)
+        print(r1)
+        update_output = sys.stdout.getvalue()
+
+        sys.stdout = original_stdout
+        self.assertEqual(update_output, expected_output)
 
 if __name__ == "__main__":
     unittest.main()
