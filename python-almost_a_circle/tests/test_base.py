@@ -49,6 +49,26 @@ class TestBase(unittest.TestCase):
         self.assertTrue(json_dictionary, [ { 'id': 12 }])
         self.assertEqual(json_dictionary, expected_output)
 
+    def test_from_json_string_none(self):
+        """Args is None"""
+        list_output = Base.from_json_string(None)
+
+        self.assertEqual(list_output, [])
+
+    def test_from_json_string_empty_list(self):
+        """Test for "[]"."""
+        list_output = Base.from_json_string("[]")
+
+        self.assertEqual(list_output, [])
+
+    def test_from_json_string_id(self):
+        """List contains [ { 'id': 89 }]"""
+        input_data = '[ { "id": 89 }]'
+        expected_output = [ { 'id': 89 }]
+        json_dictionary = Base.from_json_string(input_data)
+
+        self.assertEqual(json_dictionary, expected_output)
+        self.assertIsInstance(json_dictionary, list)
 
 if __name__ == "__main__":
     unittest.main()
