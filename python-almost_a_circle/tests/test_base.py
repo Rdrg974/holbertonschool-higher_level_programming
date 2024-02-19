@@ -72,6 +72,46 @@ class TestBase(unittest.TestCase):
 
         self.assertEqual(json_dictionary, expected_output)
         self.assertIsInstance(json_dictionary, list)
+    
+    def test_create_1(self):
+        """Test create with a dict : **{ 'id': 89 }"""
+        r1 = Rectangle.create(**{ 'id': 89 })
+
+        self.assertEqual(r1.id, 89)
+    
+    def test_create_2(self):
+        """Test create with a dict : **{ 'id': 89, 'width': 1 }"""
+        r1 = Rectangle.create(**{ 'id': 89, 'width': 1 })
+
+        self.assertEqual(r1.id, 89)
+        self.assertEqual(r1.width, 1)
+    
+    def test_create_3(self):
+        """Test create with a dict : **{ 'id': 89, 'width': 1, 'height': 2 }"""
+        r1 = Rectangle.create(**{ 'id': 89, 'width': 1, 'height': 2 })
+
+        self.assertEqual(r1.id, 89)
+        self.assertEqual(r1.width, 1)
+        self.assertEqual(r1.height, 2)
+
+    def test_create_4(self):
+        """Test create with a dict : **{ 'id': 89, 'width': 1, 'height': 2, 'x': 3 }"""
+        r1 = Rectangle.create(**{ 'id': 89, 'width': 1, 'height': 2, 'x': 3 })
+
+        self.assertEqual(r1.id, 89)
+        self.assertEqual(r1.width, 1)
+        self.assertEqual(r1.height, 2)
+        self.assertEqual(r1.x, 3)
+    
+    def test_create_5(self):
+        """Test create with a dict : **{ 'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4 }"""
+        r1 = Rectangle.create(**{ 'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4 })
+
+        self.assertEqual(r1.id, 89)
+        self.assertEqual(r1.width, 1)
+        self.assertEqual(r1.height, 2)
+        self.assertEqual(r1.x, 3)
+        self.assertEqual(r1.y, 4)
 
 if __name__ == "__main__":
     unittest.main()
