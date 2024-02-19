@@ -10,7 +10,7 @@ from models.rectangle import Rectangle
 from models.square import Square
 
 class TestRectangle(unittest.TestCase):
-    '''Tests the Rectangle class.'''
+    """Tests the Rectangle class."""
     def test_initialisation(self):
         """Initialise the rectangle"""
         r1 = Rectangle(1, 2)
@@ -249,6 +249,7 @@ class TestRectangle(unittest.TestCase):
     
     def test_save_to_file2(self):
         """Test save_to_file() in Rectangle"""
+        Base._Base__nb_objects = 0
         Rectangle.save_to_file([])
         
         with open("Rectangle.json", "r") as f:
