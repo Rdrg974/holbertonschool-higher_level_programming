@@ -107,7 +107,7 @@ class Base:
             t.left(90)
             
     @staticmethod
-    def draw_name(letter):
+    def draw_name():
         """Draw my name"""
         screen = turtle.Screen()
         screen.title("MY NAME")
