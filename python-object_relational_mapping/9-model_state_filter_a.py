@@ -23,3 +23,5 @@ if __name__ == "__main__":
 
     for instance in session.query(State).filter(State.name.contains('a')):
         print('{0}: {1}'.format(instance.id, instance.name))
+
+    session.close()
